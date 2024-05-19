@@ -1,0 +1,28 @@
+interface IVoladora {
+    void Volar();
+}
+
+interface ICantora {
+    void Cantar();
+}
+
+interface IponedoraDeHuevos {
+    void PonerHuevos();
+}
+
+interface INavegadora {
+    void Nadar();
+}
+
+interface ICazadora {
+    void Cazar();
+}
+
+// Las clases concretas de aves implementarán solo las interfaces que necesitan
+class Aguila : IVoladora, ICantora, IponedoraDeHuevos, ICazadora {
+    // Implementación de los métodos
+}
+
+class Pinguino : IponedoraDeHuevos, INavegadora {
+    // Implementación de los métodos
+}
