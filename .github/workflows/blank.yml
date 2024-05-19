@@ -1,0 +1,59 @@
+// Clase base FiguraGeometrica
+public class FiguraGeometrica
+{
+    protected double @base;
+    protected double altura;
+
+    public FiguraGeometrica(double @base, double altura)
+    {
+        this.@base = @base;
+        this.altura = altura;
+    }
+
+    public virtual double CalcularArea()
+    {
+        return @base * altura;
+    }
+}
+
+// Clase derivada Rectangulo
+public class Rectangulo : FiguraGeometrica
+{
+    public Rectangulo(double @base, double altura) : base(@base, altura)
+    {
+    }
+
+    public override double CalcularArea()
+    {
+        return @base * altura;
+    }
+}
+
+// Clase derivada Cuadrado
+public class Cuadrado : FiguraGeometrica
+{
+    public Cuadrado(double lado) : base(lado, lado)
+    {
+    }
+
+    public override double CalcularArea()
+    {
+        return @base * altura;
+    }
+}
+
+// Programa principal
+public class Program
+{
+    static void Main(string[] args)
+    {
+        // Crear objetos y calcular áreas
+        FiguraGeometrica figuraGeometrica = new FiguraGeometrica(5, 10);
+        Rectangulo rectangulo = new Rectangulo(5, 10);
+        Cuadrado cuadrado = new Cuadrado(5);
+
+        Console.WriteLine($"Área de FiguraGeometrica: {figuraGeometrica.CalcularArea()}");
+        Console.WriteLine($"Área de Rectangulo: {rectangulo.CalcularArea()}");
+        Console.WriteLine($"Área de Cuadrado: {cuadrado.CalcularArea()}");
+    }
+}
